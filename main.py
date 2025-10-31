@@ -7,9 +7,11 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import pytz
 
 # === НАСТРОЙКИ ===
-BOT_TOKEN = os.getenv("BOT_TOKEN")  # Токен зададим в Render
-ADMIN_EMAIL = os.getenv("ADMIN_EMAIL", "uzkamalov@gmail.com")
+BOT_TOKEN = os.environ.get("BOT_TOKEN")  # <-- используем os.environ.get
+if not BOT_TOKEN:
+    raise Exception("❌ BOT_TOKEN не найден. Проверь настройки Environment Variables в Render!")
 
+ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", 
 # Продавцы
 SELLERS = {
     "sssaaiidddd": "Саид",
