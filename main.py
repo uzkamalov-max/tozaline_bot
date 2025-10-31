@@ -11,7 +11,7 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN")  # <-- используем os.environ.g
 if not BOT_TOKEN:
     raise Exception("❌ BOT_TOKEN не найден. Проверь настройки Environment Variables в Render!")
 
-ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", 
+ADMIN_EMAIL = os.environ.get("ADMIN_EMAIL", "uzkamalov@gmail.com") 
 # Продавцы
 SELLERS = {
     "sssaaiidddd": "Саид",
